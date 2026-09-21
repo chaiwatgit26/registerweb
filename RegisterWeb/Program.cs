@@ -1,5 +1,6 @@
-using RegisterWeb.Data;
 using Microsoft.Data.Sqlite;
+using RegisterWeb.Data;
+using RegisterWeb.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<Database>();
+
+//Add Repository for Occupation
+builder.Services.AddScoped<OccupationRepository>();
 
 var app = builder.Build();
 
