@@ -49,6 +49,8 @@ namespace RegisterWeb.Controllers
 
             var personId = _personRepository.Create(person);
 
+            TempData["Message"] = $"Save succeeded. ID: {personId}";
+
             return RedirectToAction("Index");
         }
     }

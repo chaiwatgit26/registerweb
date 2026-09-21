@@ -2,6 +2,13 @@
 
 <h1>Register</h1>
 
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
 <form asp-controller="Register"
       asp-action="Create"
       method="post">
