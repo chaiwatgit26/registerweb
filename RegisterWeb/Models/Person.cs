@@ -8,7 +8,18 @@
 
         public string LastName { get; set; } = string.Empty;
 
+        public string Email { get; set; } = string.Empty;
+
+        public string Phone { get; set; } = string.Empty;
+
+        public DateTime BirthDate { get; set; }
+
         public int OccupationId { get; set; }
+
+        public string Sex { get; set; } = string.Empty;
+
+        public string Profile { get; set; } = string.Empty;
+
         public Occupation? Occupation { get; set; }
     }
 }

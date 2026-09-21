@@ -21,26 +21,43 @@ namespace RegisterWeb.Repositories
 
             const string sql = """
                 INSERT INTO Person
-                    (FirstName, LastName, OccupationId)
+                    (
+                        FirstName,
+                        LastName,
+                        Email,
+                        Phone,
+                        BirthDate,
+                        OccupationId,
+                        Sex,
+                        Profile
+                    )
                 VALUES
-                    ($firstName, $lastName, $occupationId);
+                    (
+                        $firstName,
+                        $lastName,
+                        $email,
+                        $phone,
+                        $birthDate,
+                        $occupationId,
+                        $sex,
+                        $profile
+                    );
 
                 SELECT last_insert_rowid();
                 """;
 
             using var command = new SqliteCommand(sql, connection);
 
+            command.Parameters.AddWithValue("$firstName", person.FirstName);
+            command.Parameters.AddWithValue("$lastName", person.LastName);
+            command.Parameters.AddWithValue("$email", person.Email);
+            command.Parameters.AddWithValue("$phone", person.Phone);
             command.Parameters.AddWithValue(
-                "$firstName",
-                person.FirstName);
-
-            command.Parameters.AddWithValue(
-                "$lastName",
-                person.LastName);
-
-            command.Parameters.AddWithValue(
-                "$occupationId",
-                person.OccupationId);
+                "$birthDate",
+                person.BirthDate.ToString("yyyy-MM-dd"));
+            command.Parameters.AddWithValue("$occupationId", person.OccupationId);
+            command.Parameters.AddWithValue("$sex", person.Sex);
+            command.Parameters.AddWithValue("$profile", person.Profile);
 
             return Convert.ToInt32(command.ExecuteScalar());
         }

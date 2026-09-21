@@ -1,12 +1,104 @@
 ﻿@model List<RegisterWeb.Models.Occupation>
 
-<h1>Occupation</h1>
+<h1>Register</h1>
 
-<ul>
-    @foreach (var occupation in Model)
-    {
-        <li>
-            @occupation.Id - @occupation.Name
-        </li>
-    }
-</ul>
+<form asp-controller="Register"
+      asp-action="Create"
+      method="post">
+
+    <div>
+        <label>First Name</label>
+        <input type="text"
+               name="FirstName"
+               class="form-control" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Last Name</label>
+        <input type="text"
+               name="LastName"
+               class="form-control" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Email</label>
+        <input type="email"
+               name="Email"
+               class="form-control" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Phone</label>
+        <input type="text"
+               name="Phone"
+               class="form-control" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Birth Date</label>
+        <input type="date"
+               name="BirthDate"
+               class="form-control" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Occupation</label>
+
+        <select name="OccupationId"
+                class="form-control">
+
+            <option value="0">-- Select Occupation --</option>
+
+            @foreach (var occupation in Model)
+            {
+                <option value="@occupation.Id">
+                    @occupation.Name
+                </option>
+            }
+
+        </select>
+    </div>
+
+    <br />
+
+    <div>
+        <label>Sex</label>
+
+        <select name="Sex"
+                class="form-control">
+
+            <option value="">-- Select Sex --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+
+        </select>
+    </div>
+
+    <br />
+
+    <div>
+        <label>Profile</label>
+
+        <textarea name="Profile"
+                  class="form-control"
+                  rows="4"></textarea>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">
+        Register
+    </button>
+
+</form>
