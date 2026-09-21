@@ -12,6 +12,9 @@ builder.Services.AddScoped<Database>();
 //Add Repository for Occupation
 builder.Services.AddScoped<OccupationRepository>();
 
+//Add Repository for Person
+builder.Services.AddScoped<PersonRepository>();
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
