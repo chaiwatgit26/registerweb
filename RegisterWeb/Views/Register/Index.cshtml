@@ -1,0 +1,12 @@
+﻿@model List<RegisterWeb.Models.Occupation>
+
+<h1>Occupation</h1>
+
+<ul>
+    @foreach (var occupation in Model)
+    {
+        <li>
+            @occupation.Id - @occupation.Name
+        </li>
+    }
+</ul>
