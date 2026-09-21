@@ -55,3 +55,16 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# SQLite database
+Data/*.db
+Data/*.db-shm
+Data/*.db-wal
