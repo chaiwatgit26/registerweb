@@ -35,9 +35,9 @@ A simple registration web application built with **ASP.NET Core** and **Angular*
 
 ### Frontend
 
-- Node.js 16.20.2
-- npm 8.19.4
-- Angular 20.x
+- Node.js 22.22.3
+- npm 11.20.0
+- Angular 21.x
 
 ## Project Structure
 
