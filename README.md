@@ -26,6 +26,19 @@ A simple registration web application built with **ASP.NET Core** and **Angular*
 - HTML
 - CSS
 
+## Development Environment
+
+### Backend
+
+- .NET 10
+- ASP.NET Core
+
+### Frontend
+
+- Node.js 16.20.2
+- npm 8.19.4
+- Angular 20.x
+
 ## Project Structure
 
 ```text
